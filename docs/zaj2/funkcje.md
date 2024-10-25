@@ -151,7 +151,7 @@ przedstaw_sie(imie="Jan", wiek=30, miasto="Kraków")
 Wywołanie funkcji powinno wyglądać następująco:
 
 ```python
-stworz_raport(101, 102, 101_nazwa="Kubek termiczny", 101_cena="45.99 zł", 102_nazwa="Długopis", 102_cena="4.99 zł")
+stworz_raport(101, 102, nazwa_101="Kubek termiczny", cena_101="45.99 zł", nazwa_102="Długopis", cena_102="4.99 zł")
 ```
 
 ## Funkcje - praktyczne porady
