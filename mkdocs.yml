@@ -44,3 +44,10 @@ nav:
     - Przypisania: zaj2/przypisania.md
     - Pętle: zaj2/petle.md
     - Funkcje cz. 1: zaj2/funkcje.md
+  - Zajęcia 3:
+      - Funkcje cz. 2: zaj3/funkcje_02.md
+      - Moduły: zaj3/moduly.md
+      - Konwencja nazewnictwa: zaj3/konwencja_nazewnictwa.md
+      - Zasięgi: zaj3/zasiegi.md
+      - Pakiety modułów: zaj3/pakiety.md
+      - Dokumentacja: zaj3/dokumentacja.md
