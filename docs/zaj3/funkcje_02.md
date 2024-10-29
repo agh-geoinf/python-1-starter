@@ -12,8 +12,6 @@ sample_function.description = "To jest przykładowa funkcja."  # Dodanie niestan
 print(sample_function.description)
 ```
 
-Moduły w Pythonie także mogą mieć swoje atrybuty:
-
 ## Adnotacje
 Jest to sposób na dodawanie informacji o typach danych używanych w kodzie. Choć Python jest językiem dynamicznie typowanym i nie wymaga jawnego określania typów, adnotacje dają programiście możliwość wskazania, jakie typy danych powinny być używane, co poprawia czytelność i ułatwia pracę w zespołach.
 
@@ -61,7 +59,7 @@ print(add(3, 5))
 ```
 
 ### Zadania
-1. Masz daną listę słowników reprezentujących informacje o książkach w bibliotece. Każdy słownik zawiera klucze: 'tytul', 'autor' oraz 'rok_wydania'. Twoim zadaniem jest napisanie kodu, który wykonuje następujące operacje przy użyciu funkcji lambda:
+1. Masz daną listę słowników reprezentujących informacje o książkach w bibliotece. Każdy słownik zawiera klucze: `tytul`, `autor` oraz `rok_wydania`. Twoim zadaniem jest napisanie kodu, który wykonuje następujące operacje przy użyciu funkcji lambda:
 
     - Sortowanie książek według roku wydania: Posortuj listę książek w kolejności rosnącej według roku ich wydania.
 
