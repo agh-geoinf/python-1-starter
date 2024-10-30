@@ -1,9 +1,8 @@
 site_name: Programowanie w języku Python
+docs_dir: docs
 repo_url: https://github.com/agh-geoinf/python-1-starter
 
 copyright: Copyright 2024 Jakub Staszel KGiIS AGH
-
-language: pl
 
 theme:
   name: material
