@@ -79,7 +79,7 @@ IDE (ang. *Integrated Development Environment*) - Zintegrowane Środowisko Progr
 
 IDE potrafią automatycznie odczytywać docstringi i udostępniać je użytkownikowi podczas pisania kodu. Dzięki temu, gdy tylko zaczynamy korzystać z funkcji lub klasy, IDE wyświetla podpowiedzi o dostępnych argumentach, typach danych, zwracanych wartościach, a także szczegóły dotyczące wyjątków, które mogą zostać zgłoszone. Docstringi dostarczają również szczegółowych informacji w panelach dokumentacji lub poprzez `hover` (najechanie myszą na nazwę funkcji lub klasy), co znacząco przyspiesza pracę i pozwala lepiej zrozumieć działanie kodu bez konieczności przeglądania całej jego implementacji.
 
-![Przykład użycia dokumentacji przez VS Code](/python-1-starter/assets/images/dokumentowanie_funkcji.png)
+![Przykład użycia dokumentacji przez VS Code.](../assets/images/dokumentowanie_funkcji.png)
 
 ### Zadania
 
