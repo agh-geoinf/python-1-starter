@@ -163,3 +163,20 @@ Blok except `BladAplikacji` przechwytuje każdy wyjątek pochodny od `BladAplika
 ???+ warning "Zapis `except Exception as e`" 
     
     To samo dzieje się w podstawowym zapisie `except Exception as e:`, który przechwytuje wszystkie wyjątki. Tłumaczy to dlaczego wszystkie nasze wyjątki powinny dziedziczyć po klasie `Exception`.
+
+## Zadania
+
+1. Napisz program w Pythonie (w tym wypadku może to być po prostu jeden plik), który:
+
+    - Będzie przechowywał informacje o dostępnych miejscach na sali kinowej (może to być np. słownik czy macierz),
+    - Umożliwi rezerwację konkretnego miejsca (np. A2), a także anulowanie rezerwacji,
+    - Logika rezerwacji:
+        - Jeśli na seans nie ma już miejsc, zgłoś wyjątek,
+        - Jeśli użytkownik próbuje zarezerwować miejsce, które już jest zarezerwowane, zgłoś wyjątek,
+        - Jeśli ten sam użytkownik (zachowaj informacje o użytkowniku, czyli np. imię i nazwisko) próbuje ponownie zarezerwować miejsce (zakładamy, że jeden użytkownik może zarezerwować tylko 1 miejsce), zgłoś wyjątek,
+        - W przeciwnym razie zarezerwuj miejsce.
+    - Logika anulacji:
+        - Jeśli zgadza się numer miejsca oraz użytkownik, anuluj rezerwację,
+        - W każdym innym przypadku, zgłoś wyjątek.
+
+  Użyj obsługi wyjątków, a także stwórz własne wyjątki.
