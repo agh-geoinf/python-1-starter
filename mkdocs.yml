@@ -52,3 +52,6 @@ nav:
       - Dokumentacja: zaj3/dokumentacja.md
   - Zajęcia 4:
       - Programowanie obiektowe: zaj4/obiektowe.md
+  - Zajęcia 5:
+      - Wyjątki: zaj5/wyjatki.md
+      - Menadżery kontekstu: zaj5/menadzery_kontekstu.md
