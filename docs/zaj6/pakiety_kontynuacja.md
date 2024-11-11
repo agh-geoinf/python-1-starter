@@ -45,4 +45,44 @@ Aktualnie `setuptools` wspiera automatyczne przeszukiwanie 2 typów struktur pro
 
 ### Instalacja w trybie edytowalnym
 
-Żeby mieć dostęp do lokalnych pakietów w trakcie rozwijania całego projektu, wystarczy zainstalować pakiety w trybie edytowalnym za pomocą `pip install -e .`.
+Żeby mieć dostęp do lokalnych pakietów w trakcie rozwijania całego projektu, wystarczy zainstalować pakiety w trybie edytowalnym za pomocą `pip install -e .` będąc w katalogu głównym projektu.
+
+## Zarządzanie zależnościami pakietu
+
+Tutaj sprawdzić jak się to ma do tworzenia środowisk wirtualnych i kolejnej sekcji.
+
+## Budowanie pakietu
+
+Budowanie pakietu to proces tworzenia dystrybucji kodu, która może być zainstalowana przez innych użytkowników lub na różnych maszynach. W Pythonie używa się narzędzi takich jak `setuptools` i `wheel`, aby stworzyć gotową paczkę w formatach `.whl` (wheel) i `.tar.gz` (source distribution).
+
+Aby zbudować pakiet wystarczy mieć zainstalowany pakiet `build` ([dokumentacja](https://build.pypa.io/en/stable/)), a następnie uruchomić go poprzez `python -m build`. Pliki powinny zostać stworzone w folderze `dist`.
+
+## Publikacja pakietu
+
+Publikacja pakietu to kluczowy krok w procesie udostępnienia oprogramowania innym użytkownikom, zespołom lub całej społeczności. Udostępniając pakiet, umożliwiamy jego łatwą **instalację, aktualizację i wykorzystanie w innych projektach**. Proces publikacji zależy od repozytorium, na którym chcemy opublikować pakiet, a także od tego, czy nasz pakiet jest przeznaczony do użytku prywatnego, publicznego, czy specjalistycznego.
+
+**Platformy do dystrybucji pakietów:**
+
+### [PyPI](https://pypi.org/)
+Jest domyślną i najczęściej używaną platformą. Pozwala na łatwą instalację pakietów za pomocą `pip` oraz ich aktualizację.
+
+Instalacja dostępnego tam pakietu: `pip install <nazwa_pakietu>`.
+
+### [conda-forge](https://conda-forge.org/)
+Platforma do dystrybucji pakietów oparta na systemie Conda, który wspiera pakiety Python i nie tylko. Conda-Forge to społecznościowe repozytorium, które umożliwia tworzenie i publikowanie pakietów w szerokiej gamie języków programowania.
+
+Instalacja dostępnego tam pakietu: `conda install -c conda-forge <nazwa_pakietu>`.
+
+Wymaga Conda do zarządzania.
+
+### [GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages)
+Platforma dystrybucji zintegrowana bezpośrednio z GitHub, co umożliwia publikację pakietów obok kodu źródłowego i integrację z GitHub Actions.
+
+Instalacja dostępnego tam pakietu: w zależności od konfiguracji `pip install` lub `conda install`.
+
+### Inne
+
+- Anaconda Cloud
+- Artifactory
+- PyPI Pro
+- Docker Hub
