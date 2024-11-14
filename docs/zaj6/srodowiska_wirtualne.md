@@ -16,24 +16,29 @@ Upraszczają także **współpracę między developerami** oraz p**roces wdraża
     - Prostota czyszczenia zależności – w razie potrzeby całe środowisko można usunąć wraz ze wszystkimi bibliotekami bez wpływu na resztę systemu.
     - Przejrzystość – środowiska umożliwiają łatwe śledzenie, jakie biblioteki są używane w danym projekcie, co zwiększa przejrzystość i ułatwia utrzymanie kodu.
 
-W Pythonie dostępnych jest wiele narzędzi do zarządzania środowiskami wirtualnymi i zależnościami. Wybór odpowiedniego narzędzia zależy od specyficznych potrzeb projektu oraz od tego, jak precyzyjnie chcemy kontrolować zależności.
+## Narzędzia
 
-## [venv](https://docs.python.org/3/library/venv.html)
+W Pythonie dostępnych jest wiele narzędzi do **zarządzania środowiskami wirtualnymi i zależnościami**. Wybór odpowiedniego narzędzia zależy od specyficznych potrzeb projektu oraz od tego, jak precyzyjnie chcemy kontrolować zależności.
+
+### [venv](https://docs.python.org/3/library/venv.html)
 Wbudowany moduł Pythona, który pozwala tworzyć proste środowiska wirtualne. Nie ma wbudowanego zarządzania zależnościami.
 
-## [pipenv](https://pipenv.pypa.io/en/latest/)
+### [pipenv](https://pipenv.pypa.io/en/latest/)
 Łączy funkcje `pip` (do zarządzania zależnościami) i `venv` (do tworzenia środowisk wirtualnych). Jest to bardziej kompleksowe rozwiązanie, które automatycznie tworzy środowisko wirtualne i zarządza zależnościami na podstawie plików `Pipfile` i `Pipfile.lock`.
 
-## [poetry](https://python-poetry.org/docs/)
+### [poetry](https://python-poetry.org/docs/)
 Zaawansowane narzędzie, umożliwia łatwe definiowanie zależności, tworzenie środowisk wirtualnych i automatyczne tworzenie paczek z `pyproject.toml`. Oprócz tego tworzy także plik blokujący `poetry.lock`.
 
-## [miniconda](https://docs.anaconda.com/miniconda/)
+### [miniconda](https://docs.anaconda.com/miniconda/)
 Menedżer pakietów i środowisk wirtualnych, sprawdza się w skomplikowanych środowiskach, szczególnie w data science i big data, gdyż pozwala także na instalację niskopoziomowych bibliotek (np. w C/C++).
 
 [conda-lock](https://conda.github.io/conda-lock/) dodatkowo generuje pliki blokujące, co zapewnia spójność wersji.
 
 Alternatywnie do [conda](https://docs.conda.io/en/latest/) można także używać [mamba](https://mamba.readthedocs.io/en/latest/) (która jest kompatybilna, ale lepiej zoptymalizowana pod kątem wydajności).
 
-## [uv](https://docs.astral.sh/uv/)
+### [uv](https://docs.astral.sh/uv/)
 
 Skupia się na pracy z `pyproject.toml` i jest zaprojektowane dla bardziej zaawansowanych deweloperów. Umożliwia definiowanie zależności i instalację pakietów bez dodatkowego narzutu. Jest stosunkowo nowym narzędziem.
+
+## Zadania
+
