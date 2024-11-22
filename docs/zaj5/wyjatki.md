@@ -179,4 +179,7 @@ Blok except `BladAplikacji` przechwytuje każdy wyjątek pochodny od `BladAplika
         - Jeśli zgadza się numer miejsca oraz użytkownik, anuluj rezerwację,
         - W każdym innym przypadku, zgłoś wyjątek.
 
-  Użyj obsługi wyjątków, a także stwórz własne wyjątki.
+???+ danger "Uwaga"
+    
+     W zadaniu użyj zarówno obsługi wyjatków jak i własnoręcznie zdefiniowanych wyjątków.
+
