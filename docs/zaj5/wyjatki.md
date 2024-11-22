@@ -182,3 +182,4 @@ Blok except `BladAplikacji` przechwytuje każdy wyjątek pochodny od `BladAplika
 ???+ danger "Uwaga"
     
      W zadaniu użyj zarówno obsługi wyjatków jak i własnoręcznie zdefiniowanych wyjątków.
+

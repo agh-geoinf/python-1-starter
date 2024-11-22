@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moje-pakiety"
+version = "0.0.1"
+requires-python = '>=3.10.0'
+description = "Poszczegolne pakiety odpowiadajace przeprowadzonym zajeciom"
+authors = [
+    { name = "Jakub Staszel", email = "jstaszel@agh.edu.pl" }
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
