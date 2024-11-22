@@ -41,4 +41,31 @@ Alternatywnie do [conda](https://docs.conda.io/en/latest/) można także używa�
 Skupia się na pracy z `pyproject.toml` i jest zaprojektowane dla bardziej zaawansowanych deweloperów. Umożliwia definiowanie zależności i instalację pakietów bez dodatkowego narzutu. Jest stosunkowo nowym narzędziem.
 
 ## Zadania
+1. Stwórz środowisko wirtualne wykorzystując `conda` i `conda-lock` na Pythonie 3.12 zakładając, że wymagane pakiety to `pytest` w wersji `8.*`, `pandas` w wersji `2.2.*` oraz `requests` w wersji wyższej niż `2.25`.
 
+???+ warning "Uwaga"
+    
+    Przed zabraniem się do tworzenia środowiska wirtualnego, polecam najpierw zapoznać się z krokami w [dokumentacji](https://conda.github.io/conda-lock/basic_usage/). Najpierw tworzy się definicję, a później z niej środowisko wirtualne. Przykładów bardziej rozbudowanych `env.yml` można poszukać w internecie. 
+
+2. W środowisku tym zainstaluj lokalny pakiet w wersji edytowalnej.
+
+???- note "Dodanie do naszego wirtualnego środowiska obsługi notebooków i Jupyter Lab"
+
+    Dopiero w tak stworzonym środowisku powinniśmy dodawać możliwość pracy w notebookach i interfejsie Jupyter Lab. Można to zrobić poprzez dodanie następujących bibliotek:
+    
+    ```python
+    name: my-virtualn-env
+    platforms:
+      - win-64
+    channels:
+      - conda-forge
+      - defaults
+    dependencies:
+      - jupyter
+      - jupyterlab
+      - notebook
+      - pip:
+          - mkdocs
+    ```
+
+    Widać tutaj, że w conda-lock można używać nie tylko dystrubucji pakietów z `conda-forge` czy `anaconda`, ale także z `pip`.

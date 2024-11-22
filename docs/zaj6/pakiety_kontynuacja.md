@@ -49,7 +49,26 @@ Aktualnie `setuptools` wspiera automatyczne przeszukiwanie 2 typów struktur pro
 
 ## Zarządzanie zależnościami pakietu
 
-Tutaj sprawdzić jak się to ma do tworzenia środowisk wirtualnych i kolejnej sekcji.
+Kiedy budujemy nasz pakiet w odtworzonym środowisku wirtualnym (na podstawie plików z zablokowanymi zaleźnościami), proces budowy przebiega  bez problemów, ponieważ wszystkie zależności są już zainstalowane i dostępne w środowisku. W takim przypadku narzędzia takie jak `build` czy `setuptools` korzystają z tych zależności lokalnie i poprawnie tworzą paczkę.
+
+Po zbudowaniu pakietu sytuacja się zmienia – użytkownicy, którzy chcą zainstalować nasz pakiet, nie będą mieli automatycznie dostępu do zależności używanych podczas jego budowy. Aby upewnić się, że użytkownicy będą mogli poprawnie zainstalować ten pakiet, konieczne jest jasne określenie jego `zależności runtime` w pliku konfiguracyjnym projektu.
+
+I tak to np. może wyglądać w pliku `pyproject.toml`:
+
+```python
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moj_pakiet"
+version = "1.0.0"
+description = "Przykład pakietu"
+dependencies = [
+    "numpy>=1.21.0,<2.0.0",
+    "pandas>=1.3.0",
+]
+```
 
 ## Budowanie pakietu
 
@@ -86,3 +105,15 @@ Instalacja dostępnego tam pakietu: w zależności od konfiguracji `pip install`
 - Artifactory
 - PyPI Pro
 - Docker Hub
+
+## Zadania
+1. Stwórz w głównym katalogu projektu plik `pyproject.toml` i wypełnij go odpowiednią treścią używając dokumentacji i przykładu konfiguracji powyżej.
+2. Zainstaluj swój zdefiniowany pakiet w trybie edytowalnym `pip install -e .`.
+
+???+ warning "Uwaga"
+
+    Zwróć uwagę na strukturę naszego projektu, szczególnie na to jak rozłożone są poszczególne pakiety wewnątrz `src` i dostosuj do tego plik konfiguracyjny.
+
+    Aby przetestować instalację naszego pakietu, wystarczy zaimportować jeden z subpakietów (np. w pliku `run.py` znajdującym się w głównym katalogu projektu `from zajecia04 import *`).
+
+    Po upewnieniu się, że wszystko działa jak powinno, proszę o **odinstalowanie naszego pakietu**.
