@@ -43,6 +43,12 @@ Skupia się na pracy z `pyproject.toml` i jest zaprojektowane dla bardziej zaawa
 ## Zadania
 1. Stwórz środowisko wirtualne wykorzystując `conda` i `conda-lock` na Pythonie 3.12 zakładając, że wymagane pakiety to `pytest` w wersji `8.*`, `pandas` w wersji `2.2.*` oraz `requests` w wersji wyższej niż `2.25`.
 
+???+ warning "Dostęp do conda, mamba i conda-lock"
+    
+    Żeby zainstalować `conda` i `mamba`, najlepiej zaintalować je zgodnie z tymi [instrukcjami](https://github.com/conda-forge/miniforge#windows).
+    
+    Następnie powinny być one już dostępne w terminalu jako polecenia `conda` i `mamba`. Kolejnym krokiem jest zainstalowane `conda-lock` w środowisku `base` (lub w innym środowisku) za pomocą komend: `conda activate` oraz `mamba install -c conda-forge conda-lock` (lub z początkiem `conda`).
+
 ???+ warning "Uwaga"
     
     Przed zabraniem się do tworzenia środowiska wirtualnego, polecam najpierw zapoznać się z krokami w [dokumentacji](https://conda.github.io/conda-lock/basic_usage/). Najpierw tworzy się definicję, a później z niej środowisko wirtualne. Przykładów bardziej rozbudowanych `env.yml` można poszukać w internecie. 
