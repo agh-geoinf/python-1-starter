@@ -1,6 +1,6 @@
 Jest kolejnym narzędziem, które ułatwia nam pracę poprzez agregację różnych funkcjonalności, a przy okazji blokuje nam możliwość przesyłania naszych zmian, jeśli nie spełniają one narzuconych wymagań.
 
-W zależności od tego jak zostanie skonfigurowany, może name pomagać z:
+W zależności od tego jak zostanie skonfigurowany, może nam pomagać z:
 
 1. Wyszukiwaniem błędów przed zatwierdzeniem kodu (`commit`) - np. zatwierdzanie kodu, który nie spełnia standardów stylu, importowanie nieużywanych bibliotek, niedokończone fragmenty kodu czy konflikty w merge'ach.
 2. Powtarzalnymi procesami - np. manualnym sprawdzaniem stylu, uruchamianiem testów czy usuwaniem plików tymczasowych.

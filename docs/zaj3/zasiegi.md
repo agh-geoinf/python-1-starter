@@ -283,7 +283,7 @@ Jest istotnym elementem programowania, szczególnie w przypadku potrzeby utrzyma
 
 Jest to też dobry przypadek użycia dla zagadnień poznanych na dzisiejszych zajęciach.
 
-Za przykład posłuży name accumulator, który zbierać będzie liczby dodawane w kolejnych wywołaniach funkcji. Po każdym dodaniu chcemy mieć możliwość pobrania aktualnej sumy. Poniżej rożne przykłady implementacyjne:
+Za przykład posłuży nam accumulator, który zbierać będzie liczby dodawane w kolejnych wywołaniach funkcji. Po każdym dodaniu chcemy mieć możliwość pobrania aktualnej sumy. Poniżej rożne przykłady implementacyjne:
 
 ??? - "Użycie zmiennej `nonlocal`"
     ```python

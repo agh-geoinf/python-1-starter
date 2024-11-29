@@ -1,6 +1,6 @@
 ## Wstęp
 
-Moduł w Pythonie to plik z rozszerzeniem `.py`, który zawiera kod – może to być pojedyncza funkcja, klasa, a nawet cały zestaw narzędzi. Moduły pozwalają name na przechowywanie kodu w osobnych plikach i łatwe jego importowanie oraz używanie w innych miejscach.
+Moduł w Pythonie to plik z rozszerzeniem `.py`, który zawiera kod – może to być pojedyncza funkcja, klasa, a nawet cały zestaw narzędzi. Moduły pozwalają nam na przechowywanie kodu w osobnych plikach i łatwe jego importowanie oraz używanie w innych miejscach.
 
 Kiedy używamy instrukcji `import`, Python próbuje znaleźć odpowiedni moduł w określonych lokalizacjach, które są przechowywane w zmiennej `sys.path`. Lista tych ścieżek obejmuje:
 

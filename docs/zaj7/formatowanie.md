@@ -24,7 +24,7 @@ Definiuje zasady dokumentowania modułów, klas i funkcji. Każdy moduł, klasa 
 
 Wprowadza adnotacje typów, które pozwalają na precyzyjne określenie typów danych.
 
-**Po co name PEPy?**
+**Po co nam PEPy?**
 
 1. Zapewniają jednolite standardy, dzięki czemu kod w Pythonie jest łatwiejszy do czytania i utrzymania.
 2. Służą jako przewodnik dla początkujących programistów, wprowadzając ich w dobre praktyki.

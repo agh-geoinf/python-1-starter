@@ -1,4 +1,4 @@
-Jest to kluczowy element tworzenia czytelnego i dobrze utrzymanego kodu. Odpowiednia dokumentacja nie tylko ułatwia współpracę z innymi programistami, ale również pomaga name wrócić do kodu po czasie. W Pythonie dokumentacja klas i funkcji odbywa się głównie przy użyciu **docstringów**, które stanowią tekstową informację o celu i sposobie działania kodu.
+Jest to kluczowy element tworzenia czytelnego i dobrze utrzymanego kodu. Odpowiednia dokumentacja nie tylko ułatwia współpracę z innymi programistami, ale również pomaga nam wrócić do kodu po czasie. W Pythonie dokumentacja klas i funkcji odbywa się głównie przy użyciu **docstringów**, które stanowią tekstową informację o celu i sposobie działania kodu.
 
 ## Docstring
 

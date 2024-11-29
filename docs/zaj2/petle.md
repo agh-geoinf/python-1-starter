@@ -92,7 +92,7 @@ Każda pętla `for` działa na iteratorach w tle.
     - Każdy obiekt, który ma metodę `__iter__()` i `__next__()`, jest iteratorem.
     - Metoda `__iter__()` zwraca iterator, a `__next__()` zwraca kolejny element. Gdy elementów zabraknie, zgłaszany jest wyjątek `StopIteration`.
 
-??? - note "Po co name iteratory?"
+??? - note "Po co nam iteratory?"
     - Efektywność pamięciowa: Przetwarzają elementy na bieżąco, nie muszą trzymać całej kolekcji w pamięci.
     - Niekończące się sekwencje: Można tworzyć iteratory, które generują nieskończone sekwencje danych, np. liczby losowe.
 
