@@ -1,4 +1,4 @@
-Jest kolejnym narzędziem, które ułatwia name pracę poprzez agregację różnych funkcjonalności, a przy okazji blokuje name możliwość przesyłania naszych zmian, jeśli nie spełniają one narzuconych wymagań.
+Jest kolejnym narzędziem, które ułatwia nam pracę poprzez agregację różnych funkcjonalności, a przy okazji blokuje nam możliwość przesyłania naszych zmian, jeśli nie spełniają one narzuconych wymagań.
 
 W zależności od tego jak zostanie skonfigurowany, może name pomagać z:
 
@@ -8,3 +8,8 @@ W zależności od tego jak zostanie skonfigurowany, może name pomagać z:
 4. Wymaganiami projektowymi - wymusza stosowanie linterów, testów czy innych narzędzi.
 
 Konfiguracja `pre-commit` odbywa się poprzez plik `.pre-commit-config.yaml` (zwykle w głównym katalogu repozytorium). Ten plik definiuje, jakie zadania (`hooks`) mają być uruchamiane przed commitowaniem.
+
+### Zadania
+1. Zainicjuj `pre-commit` wykorzystując komendę `make setup-pre-commit`
+2. Uruchom `pre-commit hooks` za pomocą kolejnej komendy `make pc`
+3. Ponownie popraw wszystkie wylistowane błędy.
