@@ -18,8 +18,8 @@ Jego zalety:
 4. **Uniwersalność** - pomimo historycznego związku z `C` i `C++`, `Makefile` jest obecnie używany w wielu językach programowania, takich jak `Python`, `Go` czy `Rust`.
 
 Żeby sprawdzić czy narzędzie jest dostępne, wystarczy uruchomić w konsoli `make --version`.
-???- "Instalacja na **Linux**"
 
+??? - "Instalacja na **Linux**"
     Na większości dystrybucji GNU Make jest dostępny w standardowych repozytoriach.
 
     ```bash
@@ -27,8 +27,7 @@ Jego zalety:
     sudo apt install make
     ```
 
-???- "Instalacja na **Windows**"
-    
+??? - "Instalacja na **Windows**"
     Na Windows GNU Make nie jest instalowane domyślnie, ale można je zainstalować za pomocą różnych narzędzi.
 
     Tutaj przykład dla Chocolatey (które trzeba też najpierw [zainstalować](https://chocolatey.org/install)):
@@ -37,16 +36,36 @@ Jego zalety:
     choco install make
     ```
 
-???- "Instalacja na **MacOS**"
-    
+??? - "Instalacja na **MacOS**"
     W przypadku Homebrew GNU Make może być dostępny jako `gmake`, aby odróżnić go od wersji dostarczanej z systemem.
 
     ```
     brew install make
     ```
 
-## Zadania
+### Zadania
 
-Nasz program, poza środowiskiem developerskim, nie potrzebuje w środowisku wirtualnym zainstalowanych bibliotek do lintingu czy testowania, dlatego zwykle stosuje się dwie osobne definicje środowiska (np. `env.yml` oraz `env-dev.yml`). 
+Nasz program, poza środowiskiem developerskim, nie potrzebuje w środowisku wirtualnym zainstalowanych bibliotek do lintingu czy testowania, dlatego zwykle stosuje się dwie osobne definicje środowiska (np. `env.yml` oraz `env-dev.yml`).
 
-1. Stwórz kopię pliku `env.yml`, zmień jego nazwę i zamień `dependencies` na 
+1. Stwórz kopię pliku `env.yml`, zmień jego nazwę na `env-dev.yml` i zamień `dependencies` na to co poniżej:
+
+```yaml
+dependencies:
+  - pip:
+    - pre-commit
+    - pytest
+    - pytest-asyncio
+    - pytest-cov
+    - pytest-mock
+    - pytest-pretty
+    - ruff
+    - mkdocs
+    - mkdocs-material
+    - mypy
+```
+
+1. Zapoznaj się z plikiem `Makefile` (stwórz go i dodaj komendy na podstawie wzoru z internetu lub przykładu od prowadzącego)
+2. Wykorzystując komendy z pliku `Makefile`, wygeneruj pliki `conda-lock` dla obu definicji, a następnie stwórz i aktywuj środowisko wirtualne.
+3. Rozbuduj plik `Makefile` o dodatkową komendę `env`, która połączy działanie 3 już istniejących: `conda-lock-install`, `setup-pre-commit` i `setup-editable`.
+4. Rozbuduj plik `Makefile` o dodatkową komendę `recreate-env`, która połączy działanie `remove-env`, `lock-file` i `env`.
+5. Sprawdź działanie stworzonych przez siebie komend.

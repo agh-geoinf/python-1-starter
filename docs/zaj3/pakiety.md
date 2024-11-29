@@ -1,6 +1,6 @@
 ## Wstęp
 
-Moduł w Pythonie to plik z rozszerzeniem `.py`, który zawiera kod – może to być pojedyncza funkcja, klasa, a nawet cały zestaw narzędzi. Moduły pozwalają nam na przechowywanie kodu w osobnych plikach i łatwe jego importowanie oraz używanie w innych miejscach.
+Moduł w Pythonie to plik z rozszerzeniem `.py`, który zawiera kod – może to być pojedyncza funkcja, klasa, a nawet cały zestaw narzędzi. Moduły pozwalają name na przechowywanie kodu w osobnych plikach i łatwe jego importowanie oraz używanie w innych miejscach.
 
 Kiedy używamy instrukcji `import`, Python próbuje znaleźć odpowiedni moduł w określonych lokalizacjach, które są przechowywane w zmiennej `sys.path`. Lista tych ścieżek obejmuje:
 
@@ -65,8 +65,7 @@ Mamy 2 główne typy importu:
 ???+ warning
     Import względny działa tylko wtedy, gdy jesteśmy w kontekście pakietu, np. podczas importowania modułów wewnątrz innego modułu tego samego pakietu.
 
-???- "Przykład - importowanie bezwzględne"
-    
+??? - "Przykład - importowanie bezwzględne"
     ```python
     from zajecia01 import dodawanie, odejmowanie
 
@@ -74,13 +73,12 @@ Mamy 2 główne typy importu:
     print(odejmowanie.odejmij(5, 3))  # Użycie funkcji odejmij z modułu odejmowanie
     ```
 
-???- "Przykład - importowanie względne (wewnątrz pakietu)"
-    
+??? - "Przykład - importowanie względne (wewnątrz pakietu)"
     Będąc w pliku `zajecia01/mnozenie.py`
 
     ```python
     from .dodawanie import dodaj  # Import z bieżącego pakietu
-    
+
     def mnoz(a, b):
         wynik = 0
         for _ in range(b):
@@ -93,5 +91,4 @@ Mamy 2 główne typy importu:
 1. Wykorzystując aktualną strukturę repozytorium, stwórz w głównym katalogu plik `run.py`, zaimportuj do niego wybrane funkcje / klasy i wywołaj przykładowy kod z ich użyciem.
 
 !!! tip
-
     Nie zapomnij dodać plików `__init__.py` wewnątrz pakietów, a także list `__all__` w tych plikach.

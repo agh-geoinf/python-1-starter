@@ -13,10 +13,10 @@ print(sample_function.description)
 ```
 
 ## Adnotacje
+
 Jest to sposób na dodawanie informacji o typach danych używanych w kodzie. Choć Python jest językiem dynamicznie typowanym i nie wymaga jawnego określania typów, adnotacje dają programiście możliwość wskazania, jakie typy danych powinny być używane, co poprawia czytelność i ułatwia pracę w zespołach.
 
-???- note "Idea adnotacji"
-
+??? - note "Idea adnotacji"
     Adnotacje stanowią coś w rodzaju "podpowiedzi" dla innych programistów oraz narzędzi analizujących kod (np. linterów, IDE), które mogą je wykorzystać do ułatwienia debugowania, uzupełniania kodu, czy znajdowania potencjalnych błędów.
 
 W poniższym przykładzie argument `name` ma być typu `str`, tak samo zwracana przez funkcję wartość.
@@ -45,6 +45,7 @@ def get_user_info(user_id: int) -> Optional[Dict[str, str]]:
 ```
 
 ## Funkcje anonimowe – lambda
+
 Są to **krótkie, anonimowe funkcje**, które można definiować bez nadawania im nazwy. Służą one głównie do wykonywania prostych operacji, zwłaszcza wtedy, gdy funkcja jest potrzebna tylko w jednym, konkretnym miejscu. Zamiast stosować pełną definicję funkcji z def, używamy słowa kluczowego lambda, aby szybko stworzyć funkcję w jednej linii.
 
 ```python
@@ -59,30 +60,30 @@ print(add(3, 5))
 ```
 
 ### Zadania
-1. Masz daną listę słowników reprezentujących informacje o książkach w bibliotece. Każdy słownik zawiera klucze: `tytul`, `autor` oraz `rok_wydania`. Twoim zadaniem jest napisanie kodu, który wykonuje następujące operacje przy użyciu funkcji lambda:
+
+1. Masz daną listę słowników reprezentujących informacje o książkach w bibliotece. Każdy słownik zawiera klucze: `tytul`, `author` oraz `rok_wydania`. Twoim zadaniem jest napisanie kodu, który wykonuje następujące operacje przy użyciu funkcji lambda:
 
     - Sortowanie książek według roku wydania: Posortuj listę książek w kolejności rosnącej według roku ich wydania.
 
-    - Filtracja książek wydanych po 2000 roku: Utwórz nową listę zawierającą tylko te książki, które zostały wydane po roku 2000. 
+    - Filtracja książek wydanych po 2000 roku: Utwórz nową listę zawierającą tylko te książki, które zostały wydane po roku 2000.
 
-    - Transformacja listy do listy tytułów: Przekształć oryginalną listę książek w listę zawierającą tylko tytuły książek. 
+    - Transformacja listy do listy tytułów: Przekształć oryginalną listę książek w listę zawierającą tylko tytuły książek.
 
 Wykorzystaj funkcje `sorted()`, `filter()` oraz `map()` w połączeniu z funkcjami lambda do realizacji zadania.
 
 ## Generatory
+
 Generatory to specjalne obiekty, które generują wyniki na żądanie – jeden po drugim – zamiast tworzyć i przechowywać całą serię wyników od razu. Dzięki temu generatory są wydajniejsze w pracy z dużymi zestawami danych, ponieważ zużywają mniej pamięci.
 
 Generatory działają na zasadzie *lazy evaluation*, co oznacza, że nie obliczają wszystkich wyników od razu, lecz tylko wtedy, gdy są potrzebne.
 
-
-???- notes "Czym generatory różnią się od iteratorów?"
-    
+??? - notes "Czym generatory różnią się od iteratorów?"
     Różnią się w sposobie ich tworzenia:
-        
+
     - **Iteratory** mogą być tworzone z dowolnej kolekcji iterowalnej (np. listy, krotki, słownika) przez wywołanie `iter()`, albo przez definiowanie klasy z metodą `__iter__()` i `__next__()`.
-        
+
     - **Generatory** są tworzone przy użyciu funkcji z yield lub jako wyrażenia generatorów. Są to specjalne, uproszczone iteratory, które automatycznie obsługują stan i logikę __next__().
-        
+
     Różnią się w sposobie przechowywania stanu:
 
     - **Iteratory** muszą ręcznie przechowywać stan między kolejnymi wywołaniami `__next__()`, co wymaga więcej kodu i zarządzania.
@@ -90,9 +91,9 @@ Generatory działają na zasadzie *lazy evaluation*, co oznacza, że nie oblicza
     - **Generatory** automatycznie zapamiętują stan wewnętrzny przy każdym wywołaniu `yield`, dzięki czemu są prostsze do implementacji.
 
     Różnią się w sposobie przechodzenia przez dane:
-        
+
     - **Iteratory** zazwyczaj są jednorazowe, ale jeśli iterator działa na strukturze danych, jak lista, można go ponownie utworzyć przez `iter()`.
-        
+
     - **Generatory** są jednorazowego użytku – po przeiterowaniu przez wszystkie wartości kończą się, i nie można ich wznowić od początku.
 
     Przykład:
@@ -103,22 +104,22 @@ Generatory działają na zasadzie *lazy evaluation*, co oznacza, że nie oblicza
         def __init__(self, max_value):
             self.max_value = max_value
             self.current = 1
-    
+
         def __iter__(self):
             return self
-    
+
         def __next__(self):
             if self.current > self.max_value:
                 raise StopIteration
             else:
                 self.current += 1
                 return self.current - 1
-    
+
     counter = CountUpTo(3)
     for number in counter:
         print(number)
     ```
-    
+
     ```python
     # Analogiczny generator z yield
     def count_up_to(max_value):
@@ -126,12 +127,13 @@ Generatory działają na zasadzie *lazy evaluation*, co oznacza, że nie oblicza
         while current <= max_value:
             yield current
             current += 1
-    
+
     for number in count_up_to(3):
         print(number)
     ```
 
 ### Funkcje generatorów
+
 Tworzymy je tak samo jak zwykłe funkcje, ale zamiast `return` używamy `yield`, który zwraca wartość, a następnie "zawiesza" działanie funkcji. Gdy po raz kolejny wywołujemy `next()` na generatorze, funkcja kontynuuje od miejsca, w którym ostatnio się zatrzymała.
 
 ```python
@@ -152,6 +154,7 @@ for number in counter:
 ```
 
 ### Wyrażenia generatorów
+
 To bardziej zwięzły sposób na tworzenie generatorów, podobny do list składanych. Różnią się jednak nawiasami: zamiast nawiasów kwadratowych `[]` (jak w listach składanych) używamy nawiasów okrągłych `()`.
 
 ```python
@@ -167,7 +170,8 @@ for value in gen:
 ```
 
 ### Zadania
-2. Napisz generator, który iteracyjnie zwraca nazwy dni tygodnia: od poniedziałku do niedzieli. Następnie, użyj tego generatora w pętli, aby wyświetlić każdy dzień tygodnia. Dodatkowo, zademonstruj, jak można użyć tego generatora do pobrania tylko pierwszych trzech dni tygodnia bez konieczności iterowania przez cały tydzień. 
+
+1. Napisz generator, który iteracyjnie zwraca nazwy dni tygodnia: od poniedziałku do niedzieli. Następnie, użyj tego generatora w pętli, aby wyświetlić każdy dzień tygodnia. Dodatkowo, zademonstruj, jak można użyć tego generatora do pobrania tylko pierwszych trzech dni tygodnia bez konieczności iterowania przez cały tydzień.
 
 ???+ tip
-    To zadanie można wykonać zarówno funkcją jak i wyrażeniem. 
+    To zadanie można wykonać zarówno funkcją jak i wyrażeniem.

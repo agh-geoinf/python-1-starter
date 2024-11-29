@@ -1,6 +1,7 @@
-Jest to paradygmat programowania, który opiera się na tworzeniu obiektów – elementów, które łączą dane i logikę w spójną całość. Każdy obiekt reprezentuje pewien byt (np. samochód, użytkownik, dokument) i posiada własne właściwości oraz zachowania.
+Jest to paradygmat programowania, który opiera się na tworzeniu obiektów – elementów, które łączą dane i logikę w spójną całość. Każdy obiekt reprezentuje pewien byt (np. samochód, użytkownik, document) i posiada własne właściwości oraz zachowania.
 
 ### Klasa
+
 **Szablon** lub **przepis**, który definiuje strukturę i zachowanie jej instancji. Klasa określa, jakie **atrybuty** (cechy) i **metody** (działania) będą posiadały instancje należące do tej klasy. Przykładowo, klasa `Samochod` może zawierać takie atrybuty, jak `marka`, `model`, `rok`, a także metody jak `przyspiesz()` czy `hamuj()`.
 
 ```python
@@ -14,15 +15,17 @@ class Samochod:
 Gdy mówimy o **obiektach klasy**, mamy na myśli strukturę (samą definicję), z których można tworzyć instancje.
 
 ### Instancja
+
 Konkretny egzemplarz klasy, stworzony na podstawie jej definicji. Instancje posiadają swoje własne wartości atrybutów, choć wszystkie należą do tej samej klasy.
 
 ```python
 moj_samochod = Samochod('Toyota', 'Corolla', 2020)
 ```
 
- **Obiekty instancji** (lub po prostu instancje) to konkretne przykłady danej klasy, które istnieją w programie i posiadają własne dane.
+**Obiekty instancji** (lub po prostu instancje) to konkretne przykłady danej klasy, które istnieją w programie i posiadają własne dane.
 
 ### Atrybuty
+
 Przechowują stan obiektu. Każdy atrybut jest częścią obiektu i przechowuje informacje specyficzne dla danej instancji klasy.
 
 Atrybuty można definiować w konstruktorze klasy (metodzie `__init__`), co umożliwia każdej instancji posiadanie indywidualnych wartości.
@@ -41,9 +44,10 @@ print(moj_samochod.model)
 ```
 
 ### Metody
+
 Funkcje zdefiniowane wewnątrz klasy, które operują na instancjach tej klasy i mogą zmieniać ich stan.
 
-Zwykle w pierwszym argumencie metody umieszcza się `self`, co pozwala na dostęp do atrybutów i innych metod obiektu.
+Zwykle w pierwszym argumencie metody umieszcza się `self`, co pozwala na dostęp do atrybutów i innych method obiektu.
 
 ```python
 # Rozszerzenie klasy Samochod o metodę przyspiesz
@@ -52,7 +56,7 @@ class Samochod:
         self.marka = marka
         self.model = model
         self.rok = rok
-    
+
     def przyspiesz(self, wartosc: int = 10):
         print(f"{self.marka} {self.model} przyspiesza o {wartosc}!")
 
@@ -61,6 +65,7 @@ moj_samochod.przyspiesz(20)  # wywołanie metody
 ```
 
 ## Po co programować obiektowo?
+
 Programowanie obiektowe (*OOP - ang. object-oriented programming*) jest często stosowane w celu uporządkowania kodu i ułatwienia zarządzania złożonymi projektami.
 
 **Zalety**:
@@ -82,7 +87,8 @@ Programowanie obiektowe (*OOP - ang. object-oriented programming*) jest często 
 - **Nie zawsze najlepsze dopasowanie do przypadków użycia**: W niektórych przypadkach, zwłaszcza przy przetwarzaniu danych, podejście proceduralne jest bardziej efektywne niż OOP, co sprawia, że stosowanie klas i obiektów może być zbędne.
 
 ## Dziedziczenie
-Kluczowa cecha programowania obiektowego, **pozwala na tworzenie nowych klas na bazie istniejących**. Umożliwia to wykorzystanie już zdefiniowanych atrybutów i metod w nowej klasie, co sprzyja oszczędności kodu i ułatwia jego zarządzanie.
+
+Kluczowa cecha programowania obiektowego, **pozwala na tworzenie nowych klas na bazie istniejących**. Umożliwia to wykorzystanie już zdefiniowanych atrybutów i method w nowej klasie, co sprzyja oszczędności kodu i ułatwia jego zarządzanie.
 
 ???+ warning "Uwaga"
     Zwróć uwagę w poniższym przykładzie jak wygląda wywoływanie konstruktorów klas nadrzędnych.
@@ -91,7 +97,7 @@ Kluczowa cecha programowania obiektowego, **pozwala na tworzenie nowych klas na 
 class Pojazd:  # Klasa bazowa
     def __init__(self, marka):
         self.marka = marka
-    
+
     def uruchom(self):
         print(f"{self.marka} jest uruchamiany.")
 
@@ -102,7 +108,9 @@ class Samochod(Pojazd):  # Klasa pochodna
 ```
 
 ### Wyszukiwanie dziedziczenia
-Gdy obiekt wywołuje metodę lub uzyskuje dostęp do atrybutu, Python rozpoczyna proces wyszukiwania tego elementu zgodnie z tzw. **MRO** (**Method Resolution Order**) – to algorytm wyszukiwania dziedziczenia:
+
+Gdy obiekt wywołuje metodę lub uzyskuje dostęp do atrybutu, Python rozpoczyna process wyszukiwania tego elementu zgodnie z tzw. **MRO** (**Method Resolution Order**) – to algorytm wyszukiwania dziedziczenia:
+
 1. Najpierw sprawdzana jest klasa, do której należy dany obiekt (czyli klasa pochodna).
 2. Następnie sprawdzane są klasy bazowe (superklasy) w kolejności od najbliższej do najdalszej.
 3. Jeśli Python znajdzie odpowiedni element w pierwszej napotkanej klasie, kończy poszukiwanie.
@@ -128,6 +136,7 @@ moj_samochod.uruchom()
 ```
 
 Aby sprawdzić kolejność MRO, można użyć metody `.__mro__` lub funkcji `help()`:
+
 ```python
 print(Samochod.__mro__)
 ```
@@ -135,10 +144,11 @@ print(Samochod.__mro__)
 Jeśli metoda lub atrybut nie istnieje ani w klasie pochodnej, ani w żadnej z klas bazowych, Python zgłasza błąd, np. `AttributeError`.
 
 ### Nadpisywanie (*overriding*)
-Proces, w którym klasa pochodna definiuje własną wersję metody o tej samej nazwie, co metoda w klasie bazowej. Dzięki temu klasa pochodna może zmienić lub rozszerzyć działanie odziedziczonej metody, dostosowując ją do własnych potrzeb.
+
+Process, w którym klasa pochodna definiuje własną wersję metody o tej samej nazwie, co metoda w klasie bazowej. Dzięki temu klasa pochodna może zmienić lub rozszerzyć działanie odziedziczonej metody, dostosowując ją do własnych potrzeb.
 
 ???+ warning "Uwaga"
-    Zwróć uwagę w poniższym przykładzie jak wygląda specjalizacja odziedziczonych metod.
+    Zwróć uwagę w poniższym przykładzie jak wygląda specjalizacja odziedziczonych method.
 
 ```python
 class Pojazd:
@@ -155,9 +165,10 @@ moj_samochod.uruchom()
 ```
 
 ## Przeciążanie operatorów
+
 Technika, która pozwala definiować, jak klasy będą odpowiadać na standardowe operacje, takie jak np. dodawanie, porównywanie czy wyświetlanie reprezentacji tekstowej.
 
-W Pythonie przeciążanie odbywa się przez definiowanie w klasie specjalnych metod (tzw. *dunder methods* – od *double underscore methods*), które zaczynają i kończą podwójnym podkreśleniem (np. `__init__`, `__add__` czy `__str__`).
+W Pythonie przeciążanie odbywa się przez definiowanie w klasie specjalnych method (tzw. *dunder methods* – od *double underscore methods*), które zaczynają i kończą podwójnym podkreśleniem (np. `__init__`, `__add__` czy `__str__`).
 
 ```python
 class Wektor:
@@ -165,12 +176,12 @@ class Wektor:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-    
+
     # Metoda przeciążająca operator +
     # Definiuje dodawanie wiektora do wektora
     def __add__(self, inny_wektor):
         return Wektor(self.x + inny_wektor.x, self.y + inny_wektor.y)
-    
+
     # Metoda przeciążająca operator <
     def __lt__(self, inny_wektor):
         return (self.x**2 + self.y**2) < (inny_wektor.x**2 + inny_wektor.y**2)
@@ -186,50 +197,53 @@ print(suma)
 print(wektor1 < wektor2)
 ```
 
-???- "Rozszerzona lista metod do przeciążania operatorów"
-
-    | Metoda                                                     | Przeciąża                         | Wywoływana dla                                                                                                              |
-    |------------------------------------------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-    | `__init__`                                                 | Konstruktor                       | Tworzenie obiektu - `x = Klasa(args)`                                                                                       |
-    | `__del__`                                                  | Destruktor                        | Zwolnienie obiektu `x`                                                                                                      |
-    | `__add__`                                                  | Operator `+`                      | `x + y`, `x += y`, jeśli nie ma `__iadd__`                                                                                  |
-    | `__or__`                                                   | Operator `|` (OR poziomu bitowego)| `x | y`, `x |= y`, jeśli nie ma `__ior__`                                                                                   | 
-    | `__repr__`, `__str__`                                      | Wyświetlanie, konwersje           | `print(x)`, `repr(x)`, `str(x)`                                                                                             |
-    | `__call__`                                                 | Wywołanie funkcji                 | `x(*args, **kargs)`                                                                                                         |
-    | `__getattr__`                                              | Odczytanie atrybutu               | `x.niezdefiniowany_atrybuty`                                                                                                |
-    | `__setattr__`                                              | Przypisanie atrybutu              | `x.atrybut = wartosc`                                                                                                       |
-    | `__delattr__`                                              | Usuwanie atrybutu                 | `del x.atrybut`                                                                                                             |
-    | `__getattribute__`                                         | Przechwytywanie atrybutu          | `x.atrybut`                                                                                                                 |
-    | `__getitem__`                                              | Indeksowanie, wycinanie, iteracje | `x[klucz]`, `x[i:j]`, pętle `for` oraz inne iteracje, jeśli nie ma `__iter__`                                               |
-    | `__setitem__`                                              | Przypisanie indeksu i wycinka     | `x[klucz] = wartosc`, `x[i:j] = sekwencja`                                                                                  |
-    | `__delitem__`                                              | Usuwanie indeksu i wycinka        | `del x[klucz]`, `del x[i:j]`                                                                                                |
-    | `__len__`                                                  | Długość                           | `len(x)`, testy prawdziwości, jeśli nie ma `__bool__`                                                                       |
-    | `__bool__`                                                 | Testy logiczne                    | `bool(x)`, testy prawdziwości                                                                                               |
-    | `__lt__`, `__gt__`, `__le__`, `__ge__`, `__eq__`, `__ne__` | Porównania                        | `x < y`, `x > y`, `x <= y`, `x >= y`, `x == y`, `x != y`                                                                    |
-    | `__radd__`                                                 | Prawostronny operator `+`         | `nieinstancja + x`                                                                                                          |
-    | `__iadd__`                                                 | Dodawanie w miejscu (rozszerzone) | `x += y`                                                                                                                    |
+??? - "Rozszerzona lista method do przeciążania operatorów"
+    | Metoda                                                     | Przeciąża                         | Wywoływana dla                                                                                                                |
+    | ---------------------------------------------------------- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+    | `__init__`                                                 | Konstruktor                       | Tworzenie obiektu - `x = Klasa(args)`                                                                                         |
+    | `__del__`                                                  | Destructor                        | Zwolnienie obiektu `x`                                                                                                        |
+    | `__add__`                                                  | Operator `+`                      | `x + y`, `x += y`, jeśli nie ma `__iadd__`                                                                                    |
+    | `__or__`                                                   | Operator \`                       | \` (OR poziomu bitowego)                                                                                                      |
+    | `__repr__`, `__str__`                                      | Wyświetlanie, konwersje           | `print(x)`, `repr(x)`, `str(x)`                                                                                               |
+    | `__call__`                                                 | Wywołanie funkcji                 | `x(*args, **kargs)`                                                                                                           |
+    | `__getattr__`                                              | Odczytanie atrybutu               | `x.niezdefiniowany_atrybuty`                                                                                                  |
+    | `__setattr__`                                              | Przypisanie atrybutu              | `x.atrybut = wartosc`                                                                                                         |
+    | `__delattr__`                                              | Usuwanie atrybutu                 | `del x.atrybut`                                                                                                               |
+    | `__getattribute__`                                         | Przechwytywanie atrybutu          | `x.atrybut`                                                                                                                   |
+    | `__getitem__`                                              | Indeksowanie, wycinanie, iteracje | `x[klucz]`, `x[i:j]`, pętle `for` oraz inne iteracje, jeśli nie ma `__iter__`                                                 |
+    | `__setitem__`                                              | Przypisanie indeksu i wycinka     | `x[klucz] = wartosc`, `x[i:j] = sekwencja`                                                                                    |
+    | `__delitem__`                                              | Usuwanie indeksu i wycinka        | `del x[klucz]`, `del x[i:j]`                                                                                                  |
+    | `__len__`                                                  | Długość                           | `len(x)`, testy prawdziwości, jeśli nie ma `__bool__`                                                                         |
+    | `__bool__`                                                 | Testy logiczne                    | `bool(x)`, testy prawdziwości                                                                                                 |
+    | `__lt__`, `__gt__`, `__le__`, `__ge__`, `__eq__`, `__ne__` | Porównania                        | `x < y`, `x > y`, `x <= y`, `x >= y`, `x == y`, `x != y`                                                                      |
+    | `__radd__`                                                 | Prawostronny operator `+`         | `nieinstancja + x`                                                                                                            |
+    | `__iadd__`                                                 | Dodawanie w miejscu (rozszerzone) | `x += y`                                                                                                                      |
     | `__iter__`, `__next__`                                     | Konteksty iteracyjne              | `i = iter(x)`, `next(i)`; pętle `for`, jeśli nie ma `__contains__`, testy `in`, wszystkie listy składanie, funkcje `map(f,x)` |
-    | `__contains__`                                             | Test przynależności               | `item in x` (dowolny iterator)                                                                                              |
-    | `__index__`                                                | Wartość całkowita                 | `hex(x)`, `bin(x)`, `oct(x)`, `o[x]`, `o[x:]`                                                                               |
-    | `__enter__`, `__exit__`                                    | Menedżer konktekstu               | `with obj as var:`                                                                                                          |
-    | `__get__`, `__set__`, `__delete__`                         | Atrybuty deskryptorów             | `x.attr`, `x.attr = value`, `del x.attr`                                                                                    |
-    | `__new__`                                                  | Tworzenie instancji               | Tworzenie instancji, przed `__init__`                                                                                       |
+    | `__contains__`                                             | Test przynależności               | `item in x` (dowolny iterator)                                                                                                |
+    | `__index__`                                                | Wartość całkowita                 | `hex(x)`, `bin(x)`, `oct(x)`, `o[x]`, `o[x:]`                                                                                 |
+    | `__enter__`, `__exit__`                                    | Menedżer konktekstu               | `with obj as var:`                                                                                                            |
+    | `__get__`, `__set__`, `__delete__`                         | Atrybuty deskryptorów             | `x.attr`, `x.attr = value`, `del x.attr`                                                                                      |
+    | `__new__`                                                  | Tworzenie instancji               | Tworzenie instancji, przed `__init__`                                                                                         |
 
 ## Tworzenie klas - przykład
+
 ### Zadanie
+
 Wejdź do repozytorium, zapoznaj się z gotowym kodem w pliku `run_zajecia04.py` oraz modułami w folderze `src/zajecia04`.
 
 Zwróć uwagę na:
 
 - Tworzenie konstruktorów - `__init__`,
-- Dodawanie metod,
+- Dodawanie method,
 - Tekstową reprezentację klas - `__str__` oraz `__repr__` (jak przykład przeciążania operatorów),
 - Dostosowywanie klas poprzez klasy podrzędne.
 
 ## Narzędzia introspekcji
+
 Introspekcja pozwala na dynamiczne badanie obiektów, ich struktur oraz cech w czasie działania programu.
 
 ### `__class__`
+
 Atrybut ten pozwala na sprawdzenie klasy, do której należy dany obiekt.
 
 ```python
@@ -245,7 +259,8 @@ print(reksio.__class__.__name__)  # Pies
 ```
 
 ### `__dict__`
-Atrybut ten to słownik, który przechowuje wszystkie atrybuty instancji obiektu. Dzięki __dict__ można dynamicznie uzyskać dostęp do atrybutów obiektu, modyfikować je, dodawać nowe lub iterować po nich.
+
+Atrybut ten to słownik, który przechowuje wszystkie atrybuty instancji obiektu. Dzięki __dict__ można dynamicznie uzyskać dostęp do atrybutów obiektu, modyfikować je, dodawać now lub iterować po nich.
 
 ```python
 class Samochod:
@@ -259,11 +274,11 @@ print(moj_samochod.__dict__) # {'marka': 'Toyota', 'model': 'Corolla', 'rok': 20
 ```
 
 ## Abstrakcyjne klasy nadrzędne
-Są to klasy służące jako szablony, które definiują strukturę i wymuszone metody dla klas pochodnych, ale same nie mogą być inicjalizowane. Używają dekoratora `@abstractmethod` do oznaczenia metod, które muszą być zaimplementowane w klasach pochodnych.
 
-???- tip "Korzyści wynikające z wykorzystywania abstrakcyjnych klas nadrzędnych"
+Są to klasy służące jako szablony, które definiują strukturę i wymuszone metody dla klas pochodnych, ale same nie mogą być inicjalizowane. Używają dekoratora `@abstractmethod` do oznaczenia method, które muszą być zaimplementowane w klasach pochodnych.
 
-    - **Spójność** – wymusza implementację określonych metod.
+??? - tip "Korzyści wynikające z wykorzystywania abstrakcyjnych klas nadrzędnych"
+    - **Spójność** – wymusza implementację określonych method.
     - **Reużywalność** – pozwala dzielić metody między klasami.
     - **Polimorfizm** – umożliwia jednolite używanie różnych klas.
 
@@ -287,6 +302,7 @@ class Kot(Zwierze):
 ```
 
 ## Atrybuty pseudoprywatne
+
 Atrybuty, których nazwy zaczynają się od dwóch podkreślników, np. `__nazwa`. Taka konwencja nazw powoduje, że Python stosuje *name mangling* – czyli zmienia nazwę atrybutu w taki sposób, że jest trudniej dostępna z zewnątrz klasy, ale nie jest całkowicie prywatna. Jest to bardziej forma ochrony, niż pełne ukrycie atrybutów.
 
 ```python
@@ -302,18 +318,19 @@ print(obiekt.pokaz_ukryty())  # Poprawne: "tajne"
 print(obiekt._MojaKlasa__ukryty_atrybut)  # Dostęp poprzez name mangling: "tajne"
 ```
 
-???- tip "Po co używać atrybutów pseudoprywatnych?"
-    
+??? - tip "Po co używać atrybutów pseudoprywatnych?"
     - **Ochrona przed przypadkowym nadpisaniem** – przy dziedziczeniu klasy istnieje mniejsze ryzyko, że klasa pochodna przypadkowo nadpisze atrybut o tej samej nazwie.
     - **Czytelność** – pokazują, że atrybut nie jest przeznaczony do bezpośredniego użytku z zewnątrz klasy.
 
 ## Rozszerzanie typów wbudowanych
+
 Może być przydatne, gdy chcemy dodać dodatkową funkcjonalność lub dostosować zachowanie istniejących typów (np. `list`, `dict`, `str`) do specyficznych potrzeb projektu.
 
 ### Za pomocą osadzania (kompozycja)
+
 Poprzez utworzenie nowej klasy, która wewnętrznie przechowuje instancję typu wbudowanego jako atrybut.
 
-W ten sposób klasa ta może wykorzystywać typ wbudowany i rozszerzać jego funkcjonalność, delegując operacje na ten typ, ale nie dziedziczy jego metod bezpośrednio. Osadzanie jest przydatne, gdy chcemy dodać nowe funkcje bez ingerencji w istniejące metody typu wbudowanego.
+W ten sposób klasa ta może wykorzystywać typ wbudowany i rozszerzać jego funkcjonalność, delegując operacje na ten typ, ale nie dziedziczy jego method bezpośrednio. Osadzanie jest przydatne, gdy chcemy dodać now funkcje bez ingerencji w istniejące metody typu wbudowanego.
 
 ```python
 class MojaLista:
@@ -336,7 +353,8 @@ print(moja_lista.suma()) # 10
 ```
 
 ### Za pomocą klas podrzędnych (dziedziczenia)
-Poprzez utworzenie klasy podrzędnej, która dziedziczy po typie wbudowanym. Dzięki temu klasa podrzędna automatycznie przejmuje wszystkie metody i atrybuty typu bazowego, co pozwala na łatwe dodanie nowych funkcji lub nadpisanie istniejących metod.
+
+Poprzez utworzenie klasy podrzędnej, która dziedziczy po typie wbudowanym. Dzięki temu klasa podrzędna automatycznie przejmuje wszystkie metody i atrybuty typu bazowego, co pozwala na łatwe dodanie nowych funkcji lub nadpisanie istniejących method.
 
 ```python
 class MojaLista(list):
@@ -348,14 +366,14 @@ print(moja_lista)         # [1, 2, 3, 4]
 print(moja_lista.suma())  # 10
 ```
 
-???- tip "Za i przeciw dla obu sposobów"
-    
-    |               | Za                                                                                                                                                                                                                                   | Przeciw                                                                                                                                                                                                                                                                                                                               |
-    |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Osadzanie     | Daje pełną kontrolę nad metodami, które są dostępne dla użytkownika klasy. Izoluje funkcjonalność rozszerzonego typu od interfejsu klasy bazowej, co może zwiększyć bezpieczeństwo i ułatwić utrzymanie kodu.                        | Wymaga ręcznego implementowania delegacji metod, jeśli potrzebujemy pełnego dostępu do funkcji typu wbudowanego. Może być mniej wydajne i bardziej czasochłonne niż dziedziczenie, jeśli chcemy używać większości metod typu wbudowanego.                                                                                             |
-    | Dziedziczenie | Klasa pochodna automatycznie przejmuje wszystkie metody typu wbudowanego, co ułatwia tworzenie nowych funkcji. Jest bardziej ekonomiczne i intuicyjne w implementacji, szczególnie gdy potrzebujemy tylko kilku dodatkowych funkcji. | Trudniej jest zmodyfikować sposób działania niektórych metod w typach wbudowanych, ponieważ metody te mogą wywoływać bezpośrednie operacje na strukturze danych. Dziedziczenie może prowadzić do problemów z nieoczekiwanym zachowaniem, jeśli metody typu wbudowanego nie są dobrze przystosowane do nowych funkcji klasy pochodnej. |
+??? - tip "Za i przeciw dla obu sposobów"
+    |               | Za                                                                                                                                                                                                                                   | Przeciw                                                                                                                                                                                                                                                                                                                                |
+    | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Osadzanie     | Daje pełną kontrolę nad metodami, które są dostępne dla użytkownika klasy. Izoluje funkcjonalność rozszerzonego typu od interfejsu klasy bazowej, co może zwiększyć bezpieczeństwo i ułatwić utrzymanie kodu.                        | Wymaga ręcznego implementowania delegacji method, jeśli potrzebujemy pełnego dostępu do funkcji typu wbudowanego. Może być mniej wydajne i bardziej czasochłonne niż dziedziczenie, jeśli chcemy używać większości method typu wbudowanego.                                                                                            |
+    | Dziedziczenie | Klasa pochodna automatycznie przejmuje wszystkie metody typu wbudowanego, co ułatwia tworzenie nowych funkcji. Jest bardziej ekonomiczne i intuicyjne w implementacji, szczególnie gdy potrzebujemy tylko kilku dodatkowych funkcji. | Trudniej jest zmodyfikować sposób działania niektórych method w typach wbudowanych, ponieważ metody te mogą wywoływać bezpośrednie operacje na strukturze danych. Dziedziczenie może prowadzić do problemów z nieoczekiwanym zachowaniem, jeśli metody typu wbudowanego nie są dobrze przystosowane do nowych funkcji klasy pochodnej. |
 
 ## Sloty
+
 Specjalny mechanizm, który pozwala na optymalizację pamięci obiektów klasy, poprzez ograniczenie listy atrybutów, które można dodać do instancji danej klasy.
 
 ```python
@@ -371,19 +389,22 @@ print(osoba.imie)  # Jan
 print(osoba.wiek)  # 30
 
 # Próba dodania nowego atrybutu zgłosi błąd
-osoba.adres = "Warszawa"  # AttributeError: 'Osoba' object has no attribute 'adres'
+osoba.address = "Warszawa"  # AttributeError: 'Osoba' object has no attribute 'address'
 ```
 
 Python przestaje używać dynamicznego słownika `__dict__` do przechowywania atrybutów obiektu, co ogranicza możliwość dodawania nowych atrybutów poza tymi zdefiniowanymi w `__slots__`, ale jednocześnie zmniejsza ilość zużywanej pamięci.
 
-## Rodzaje metod w klasach
+## Rodzaje method w klasach
+
 ### Metody instancji
+
 Domyślny sposób działania, jako pierwszy argument przyjmują `self`, który odnosi się do instancji.
 
 ???+ note "Zastosowanie"
     Operacje na instancji.
 
 ### Metody klasy
+
 Deklarowane za pomocą dekoratora `@classmethod`. Przyjmują jako pierwszy argument `cls`, który odnosi się do samej klasy, a nie jej instancji.
 
 ```python
@@ -414,6 +435,7 @@ print(nowy_pracownik.stanowisko)     # Nieznane stanowisko
     Operacje na klasie, alternatywne konstruktory.
 
 ### Metody statyczne
+
 Deklarowane za pomocą dekoratora `@staticmethod`. Nie przyjmują żadnego specjalnego pierwszego argumentu i nie mają dostępu ani do instancji (`self`), ani do klasy (`cls`).
 
 ```python
@@ -426,7 +448,7 @@ class Kalkulator:
     def odejmij(a, b):
         return a - b
 
-# Wywoływanie metod statycznych
+# Wywoływanie method statycznych
 print(Kalkulator.dodaj(5, 3))     # 8
 print(Kalkulator.odejmij(10, 4))  # 6
 ```
@@ -435,16 +457,21 @@ print(Kalkulator.odejmij(10, 4))  # 6
     Funkcje pomocnicze powiązane tematycznie.
 
 ### Zadanie
+
 Zapoznaj się z metodami w klasie z `src.zajecia04.fleet.ambulance`.
 
 ## Zadania
+
 Dodaj następujące funkcjonalności do programu przedstawionego jako przykład. Dla wszystkich dodanych funkcjonalności stwórz przykładowy kod potwierdzający, że działają (rozbudowując kod w `run_zajecia04.py`).
 
-1. Zmodyfikuj każdą klasę tak, żeby posiadała atrybut `__max_id`, który będzie wykorzystywany do nadawania identyfikatorów kolejnym stworzonym instancjom (zamiast podawania go jako argument przy inicjalizacji). 
-2. Rozbuduj klasę Incident o priorytet zdarzenia, czas zgłoszenia i informacje o zgłaszającym. 
-3. Zaprojektuj w ramach subpakietu `fleet` klasę `Station`, każda stacja ma posiadać identyfikator, lokalizację, karetkę, kierowcę i 1 dodatkowego pracownika. Napisz metodę, która sprawdza czy karetka jest na miejscu (czy zgadzają się lokalizacje). 
-4. Rozbuduj aplikację (w tym zaprojektuj logikę, ale także elementy, które trzeba dodać w różnych klasach (niekoniecznie istniejących) o możliwość zarządzania incydentami – przydzielanie karetek do zgłaszanych zdarzeń. Te funkcjonalności muszą uwzględniać: 
+1. Zmodyfikuj każdą klasę tak, żeby posiadała atrybut `__max_id`, który będzie wykorzystywany do nadawania identyfikatorów kolejnym stworzonym instancjom (zamiast podawania go jako argument przy inicjalizacji).
 
-    - Priorytet i czas, który upłynął od zgłoszenia, 
-    - Aktualny stan, w którym znajduje się karetka, 
+2. Rozbuduj klasę Incident o priorytet zdarzenia, czas zgłoszenia i informacje o zgłaszającym.
+
+3. Zaprojektuj w ramach subpakietu `fleet` klasę `Station`, każda stacja ma posiadać identyfikator, lokalizację, karetkę, kierowcę i 1 dodatkowego pracownika. Napisz metodę, która sprawdza czy karetka jest na miejscu (czy zgadzają się lokalizacje).
+
+4. Rozbuduj aplikację (w tym zaprojektuj logikę, ale także elementy, które trzeba dodać w różnych klasach (niekoniecznie istniejących) o możliwość zarządzania incydentami – przydzielanie karetek do zgłaszanych zdarzeń. Te funkcjonalności muszą uwzględniać:
+
+    - Priorytet i czas, który upłynął od zgłoszenia,
+    - Aktualny stan, w którym znajduje się karetka,
     - Odległość karetki od zdarzenia.

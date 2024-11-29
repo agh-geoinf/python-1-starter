@@ -60,6 +60,6 @@ nav:
       - Pakiety - kontynuacja: zaj6/pakiety_kontynuacja.md
       - Środowiska wirtualne: zaj6/srodowiska_wirtualne.md
   - Zajęcia 7:
-      - Narzędzie make: zaj7/make.md
+      - GNU Make: zaj7/make.md
       - Formatowanie i analiza kodu: zaj7/formatowanie.md
-
+      - pre-commit: zaj7/precommit.md

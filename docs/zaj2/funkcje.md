@@ -34,19 +34,19 @@ Trzy kluczowe elementy każdej funkcji:
 3. Zwracane wartości - słowo kluczowe `return`
 
 ### Zadania
-1. Napisz funkcję `zmien_wartosc(arg)`, która przyjmuje jeden argument i próbuje zmodyfikować ten argument w różny sposób w zależności od tego, czy jest on niemutowalny (w tym przypadku integerem) czy mutowalny (w tym przypadku listą). 
 
-    - Jeśli jest listą, wykonaj `arg[0] = 'kalafior'`. 
+1. Napisz funkcję `zmien_wartosc(arg)`, która przyjmuje jeden argument i próbuje zmodyfikować ten argument w różny sposób w zależności od tego, czy jest on niemutowalny (w tym przypadku integerem) czy mutowalny (w tym przypadku listą).
+
+    - Jeśli jest listą, wykonaj `arg[0] = 'kalafior'`.
 
     - Jeśli jest integerem, wykonaj `arg = 65482652`.
 
-Wypisz przykłady dla obu przypadków, wypisz wartości przed i po wykonaniu funkcji. Jak się zachowują te obiekty? 
+Wypisz przykłady dla obu przypadków, wypisz wartości przed i po wykonaniu funkcji. Jak się zachowują te obiekty?
 
-!!! tip 
+!!! tip
     Warto skorzystać z funkcji `isinstance()`.
 
-???- note "Teoria: mutowalne i niemutowalne obiekty w funkcjach"
-
+??? - note "Teoria: mutowalne i niemutowalne obiekty w funkcjach"
     Kiedy zmienne są przekazywane do funkcji jako argumenty, Python nie tworzy ich kopii, lecz przekazuje referencję do oryginalnego obiektu. W związku z tym sposób, w jaki te obiekty zachowują się wewnątrz funkcji, zależy od ich typu – mutowalne lub niemutowalne.
 
     **Obiekty mutowalne** (np. listy, słowniki):
@@ -97,8 +97,7 @@ def przedstaw_sie(**dane):
 przedstaw_sie(imie="Jan", wiek=30, miasto="Kraków")
 ```
 
-???- danger "Mieszane użycie argumentów nie zawsze jest możliwe"
-
+??? - danger "Mieszane użycie argumentów nie zawsze jest możliwe"
     Ważne jest, aby przestrzegać kolejności: najpierw argumenty pozycyjne, potem domyślne, następnie `*args`, a na końcu `**kwargs`.
 
     ```python
@@ -111,7 +110,7 @@ przedstaw_sie(imie="Jan", wiek=30, miasto="Kraków")
     ```
 
     Oraz kilka niepoprawnych wywołań:
-    
+
     ```python
     funkcja_mieszana()
     funkcja_mieszana(1, 2, 3, 4, 5, a=6)
@@ -120,33 +119,34 @@ przedstaw_sie(imie="Jan", wiek=30, miasto="Kraków")
     ```
 
     Sama definicja również może być niepoprawna:
+
     ```python
     def funkcja_mieszana(a=10, b):
         print(f"a: {a}, b: {b}")
     ```
 
 ### Zadania
-2. Napisz funkcję `zamowienie_produktu`, która przyjmuje jeden obowiązkowy argument pozycyjny `nazwa_produktu` i dwa obowiązkowe argumenty nazwane: `cena` i `ilosc`. Funkcja powinna zwracać tekst podsumowujący zamówienie, zawierające nazwę produktu, łączną cenę (cena * ilość) oraz ilość zamówionego produktu. 
+
+1. Napisz funkcję `zamowienie_produktu`, która przyjmuje jeden obowiązkowy argument pozycyjny `nazwa_produktu` i dwa obowiązkowe argumenty nazwane: `cena` i `ilosc`. Funkcja powinna zwracać text podsumowujący zamówienie, zawierające nazwę produktu, łączną cenę (cena * ilość) oraz ilość zamówionego produktu.
 
     - Stwórz pustą listę, do której wstawisz wartości zwracane przez funkcję dla 3 różnych produktów.
 
     - Przeiteruj po wypełnionej liście, wyświetl teksty.
 
-    - Zmodyfikuj funkcję tak, żeby oprócz tekstu podsumowującego zwracała także wartość zamówienia. 
+    - Zmodyfikuj funkcję tak, żeby oprócz tekstu podsumowującego zwracała także wartość zamówienia.
 
-    - Na koniec wyświetl sumaryczną wartość zamówień (sumę z każdego zamówionego produktu). 
+    - Na koniec wyświetl sumaryczną wartość zamówień (sumę z każdego zamówionego produktu).
 
     - Dodaj wartość domyślną dla argumentu `ilosc` równą 1.
 
 !!! warning "Ważna informacja"
-
     Wykorzystaj poniższy początek definicji i go nie modyfikuj. Wymusi to podawanie argumentów po gwiazde jedynie w formie nazwanej.
 
     ```python
     def zamowienie_produktu(nazwa_produktu, *, cena, ilosc):
     ```
 
-3. Napisz funkcję `stworz_raport`, która przyjmuje dowolną liczbę argumentów pozycyjnych (`*args`) i nazwanych (`**kwargs`). Argumenty pozycyjne powinny reprezentować numery ID produktów, a argumenty nazwane - informacje o tych produktach (np. nazwa, cena). Funkcja powinna tworzyć i wyświetlać raport, w którym dla każdego ID produktu podane są szczegółowe informacje na jego temat. 
+1. Napisz funkcję `stworz_raport`, która przyjmuje dowolną liczbę argumentów pozycyjnych (`*args`) i nazwanych (`**kwargs`). Argumenty pozycyjne powinny reprezentować numery ID produktów, a argumenty nazwane - informacje o tych produktach (np. nazwa, cena). Funkcja powinna tworzyć i wyświetlać raport, w którym dla każdego ID produktu podane są szczegółowe informacje na jego temat.
 
 Wywołanie funkcji powinno wyglądać następująco:
 
@@ -155,6 +155,7 @@ stworz_raport(101, 102, nazwa_101="Kubek termiczny", cena_101="45.99 zł", nazwa
 ```
 
 ## Funkcje - praktyczne porady
+
 1. Funkcje powinny być niezależne od otoczenia - argumenty jako input, return jako output.
 2. Unikamy zmiennych globalnych.
 3. Nie modyfikujemy argumentów mutowalnych.
