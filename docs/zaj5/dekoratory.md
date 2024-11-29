@@ -66,10 +66,9 @@ print(obiekt.nowa_metoda())  # Nowa metoda w klasie!
 
 ## Typowe zastosowania dekoratorów
 
-???- note "Logowanie"
-
+??? - note "Logowanie"
     Logowanie - automatyczne logowanie wywołań funkcji.
-    
+
     ```python
     def loguj(funkcja):
         def wrapper(*args, **kwargs):
@@ -78,10 +77,9 @@ print(obiekt.nowa_metoda())  # Nowa metoda w klasie!
         return wrapper
     ```
 
-???- note "Uwierzytelnianie"
-
+??? - note "Uwierzytelnianie"
     Uwierzytelnianie – sprawdzanie uprawnień przed wykonaniem funkcji.
-    
+
     ```python
     def wymaga_uprawnien(funkcja):
         def wrapper(*args, **kwargs):
@@ -91,13 +89,12 @@ print(obiekt.nowa_metoda())  # Nowa metoda w klasie!
         return wrapper
     ```
 
-???- note "Mierzenie czasu wykonania funkcji"
-    
+??? - note "Mierzenie czasu wykonania funkcji"
     Czas wykonania funkcji – pomiar czasu, jaki zajmuje wykonanie funkcji.
-    
+
     ```python
     import time
-    
+
     def zmierz_czas(funkcja):
         def wrapper(*args, **kwargs):
             start = time.time()
@@ -110,12 +107,12 @@ print(obiekt.nowa_metoda())  # Nowa metoda w klasie!
 
 ## Zadania
 
-Stwórz program (to również może być po prostu jeden plik), w którym zdefiniujesz dekorator oraz przedstawisz jego działanie. 
+Stwórz program (to również może być po prostu jeden plik), w którym zdefiniujesz dekorator oraz przedstawisz jego działanie.
 
-Ma to być dekorator, który zmierzy i wyświetli czas wykonania dekorowanej funkcji. Dekorator powinien przyjmować jeden argument, który określa jednostkę czasu (sekundy lub mikrosekundy) dla wyniku. 
+Ma to być dekorator, który zmierzy i wyświetli czas wykonania dekorowanej funkcji. Dekorator powinien przyjmować jeden argument, który określa jednostkę czasu (sekundy lub mikrosekundy) dla wyniku.
 
-Wymagania: 
+Wymagania:
 
-- Ma przyjmować argument o nazwie unit o wartości 'seconds' lub 'microseconds', określający jednostkę, w której ma być wyświetlony czas wykonania funkcji. 
-- Ma mierzyć czas wykonania dekorowanej funkcji. 
-- Ma wyświetlić czas wykonania funkcji w wybranej jednostce po zakończeniu jej wykonania. 
+- Ma przyjmować argument o nazwie unit o wartości 'seconds' lub 'microseconds', określający jednostkę, w której ma być wyświetlony czas wykonania funkcji.
+- Ma mierzyć czas wykonania dekorowanej funkcji.
+- Ma wyświetlić czas wykonania funkcji w wybranej jednostce po zakończeniu jej wykonania.

@@ -4,7 +4,7 @@ Zawiera wstępy teoretyczne, przykłady, a także zadania do wykonania.
 
 ### Zadanie 0
 
-!!! info 
+!!! info
     Zapoznaj się z aforystycznymi zasadami, które powinny towarzyszyć każdemu programiście, który chce tworzyć lepszy i czytelniejszy kod w Pythonie.
 
-Zaimportuj moduł this wykorzystując instrukcję `import this`. 
+Zaimportuj moduł this wykorzystując instrukcję `import this`.

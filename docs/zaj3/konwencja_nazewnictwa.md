@@ -1,4 +1,5 @@
 ## Konwencja dot. nazewnictwa
+
 - Nazwy rozpoczynające się od jednego `_` nie są importowane za pomocą `from moduł import *`.
 
 Zmienne i funkcje zaczynające się od pojedynczego podkreślenia traktowane są jako "wewnętrzne", co oznacza, że powinny być stosowane tylko wewnątrz modułu i nigdzie poza nim.
