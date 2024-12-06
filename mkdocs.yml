@@ -63,3 +63,7 @@ nav:
       - GNU Make: zaj7/make.md
       - Formatowanie i analiza kodu: zaj7/formatowanie.md
       - pre-commit: zaj7/precommit.md
+  - Zajęcia 8:
+      - Logowanie: zaj8/logowanie.md
+      - Testowanie: zaj8/testy.md
+      - CLI: zaj8/cli.md
