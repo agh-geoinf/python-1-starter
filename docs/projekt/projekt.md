@@ -34,3 +34,4 @@ Do klasy należy napisać odpowiednie testy dla wszystkich jej funkcjonalności.
 W ramach subpakietu o nazwie `preprocessing`, w module `imgw_handler` stwórz klasę `IMGWDataHandler`, która będzie służyć do:
 
 * Modyfikacji formy przechowywania danych - napisz metodą `divide_downloaded`, która przetworzy pobrane dane i zapisze je do osobnych plików w podkatalogu `./data/separated`. Jako propozycja tego podziału, każda stacja ma mieć swój plik, w którym będą przechowywane wszystkie jej parametry.
+* Podsumowania informacji dla poszczególnych stacji - stwórz metodę `summarize_time_range`, która wyświetli informacje oraz stworzy wykres z przedziałami czasowymi danych dla poszczególnych stacji (początek i koniec danych, a także braki w danych). W zależności od parametru, metoda się wykona dla pojedynczej stacji lub dla wszystkich pobranych.F
