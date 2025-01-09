@@ -68,3 +68,4 @@ nav:
       - Testowanie: zaj8/testy.md
       - CLI: zaj8/cli.md
   - Projekt zaliczeniowy: projekt/projekt.md
+  - Interakcje baza danych <-> aplikacja: other/interakcje_baza_aplikacja.md
